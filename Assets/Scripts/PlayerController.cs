@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		ShowFalling();
+
+		if (transform.position.y < GM.instance.yMinLive){
+ 			GM.instance.KillPlayer();
+ 		}
 	}
 
 	void MoveHorizontal(float speed){

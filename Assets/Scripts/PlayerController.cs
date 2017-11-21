@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 	public Transform feet;
 
 	public float feetWidth = 0.5f;
-	public float feetHeight = 0.1f;
+	public float feetHeight = 0.2f;
 
 	public bool isGrounded;
 
@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.gameObject.CompareTag("Coin")){
+			SFXManager.instance.ShowCoinParticles(other.gameObject);
 			Destroy(other.gameObject);
 		}
 	}

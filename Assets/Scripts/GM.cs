@@ -14,6 +14,9 @@
  
  	public float timeToRespawn = 1.5f;
  
+	public UI ui;
+
+	GameData data = new GameData(); 
  
  	void Awake(){
  		if (instance == null) {
@@ -36,9 +39,15 @@
  				player = obj.GetComponent<PlayerController>();
  			}
  		}
+		DisplayHudData();
  	}
-
-
+	
+	void DisplayHudData(){
+		ui.hud.txtCoinCount.text = "x " + data.coinCount;
+	}
+	public void IncrementCoinCount(){
+		data.coinCount++;
+	}
  	public void RespawnPlayer(){
  		Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
  	}

@@ -16,7 +16,7 @@
  		}
  	}
  
- 	public void PlayCoinPickupSoud(GameObject obj) {
+ 	public void PlayCoinPickupSound(GameObject obj) {
  		AudioSource.PlayClipAtPoint(audioSFX.coinPickup, obj.transform.position);
  	}
  
